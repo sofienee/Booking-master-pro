@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>lister Movies</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+</head>
+<body>
+<table>
+<tr><th>idmovie</th><th>name</th><th>Duree</th><th>categorie</th><th>date</th></tr>
+<tr th:each="a:${movie}">
+<td th:text="${a.idmovie}"/>
+<td th:text="${a.name}"/>
+<td th:text="${a.Duree}"/>
+<td th:text="${a.categorie}"/>
+<td th:text="${a.date}"/>
+<td>
+<a th:href="@{/movie/supMovie(id=${a.idmovie})}" th:text="Supprimer"/>
+</td>
+<td>
+<a th:href="@{/movie/modifMovie(id=${a.idmovie})}" th:text="Modifier"/>
+</td>
+</tr>
+</table>
+</body>
+</html>

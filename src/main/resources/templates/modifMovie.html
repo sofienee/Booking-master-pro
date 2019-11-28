@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Modifier Movie</title>
+</head>
+<body>
+<form th:action="@{/movie/update}" th:object="${movie}" method="post">
+<p>idmovie<input type="text" th:field="*{idmovie}"/><span 
+ th:errors="*{idmovie}"></span></p> 
+<p>name<input type="text" th:field="*{name}"/><span
+th:errors="*{name}"></span></p>
+<p>categorie<input type="text" th:field="*{categorie}"/><span
+th:errors="*{categorie}"></span></p>
+<p>Duree<input type="text" th:field="*{Duree}"/><span
+th:errors="*{Duree}"></span></p>
+<p>date<input type="text" th:field="*{date}"/><span
+th:errors="*{date}"></span></p>
+<p><input type="submit" value="save"/></p>
+</form>
+</body>
+</html>

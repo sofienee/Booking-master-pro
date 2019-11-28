@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>lister Client</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+</head>
+<body>
+<table>
+<tr><th>id</th><th>age</th><th>nom</th></tr>
+<tr th:each="a:${client}">
+<td th:text="${a.id}"/>
+<td th:text="${a.age}"/>
+<td th:text="${a.nom}"/>
+<td>
+<a th:href="@{/client/supClient(id=${a.id})}" th:text="Supprimer"/>
+</td>
+<td>
+<a th:href="@{/client/modifClient(id=${a.id})}" th:text="Modifier"/>
+</td>
+<td>
+<a th:href="@{/client/resClient(id=${a.id})}" th:text="Reserver"/>
+</td>
+</tr>
+</table>
+</body>
+</html>

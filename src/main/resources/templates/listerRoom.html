@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>lister Rooms</title>
+<link rel="stylesheet" type="text/css" href="bootstrap.css" />
+</head>
+<body>
+<table>
+<tr><th>idroom</th><th>Label</th><th>nb_chaise</th></tr>
+<tr th:each="a:${room}">
+<td th:text="${a.idroom}"/>
+<td th:text="${a.Label}"/>
+<td th:text="${a.nbchaise}"/>
+<td>
+<a th:href="@{/room/supRoom(id=${a.idroom})}" th:text="Supprimer"/>
+</td>
+<td>
+<a th:href="@{/room/modifRoom(id=${a.idroom})}" th:text="Modifier"/>
+</td>
+</tr>
+</table>
+</body>
+</html>

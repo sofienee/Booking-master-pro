@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Modifier Room</title>
+</head>
+<body>
+<form th:action="@{/room/update}" th:object="${room}" method="post">
+<p>id<input type="text" th:field="*{idroom}"/><span 
+ th:errors="*{idroom}"></span></p> 
+<p>age<input type="text" th:field="*{Label}"/><span
+th:errors="*{Label}"></span></p>
+<p>nom<input type="text" th:field="*{nbchaise}"/><span
+th:errors="*{nbchaise}"></span></p>
+<p><input type="submit" value="save"/></p>
+</form>
+</body>
+</html>

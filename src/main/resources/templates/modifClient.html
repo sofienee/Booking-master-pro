@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Modifier client</title>
+</head>
+<body>
+<form th:action="@{/client/update}" th:object="${client}" method="post">
+<p>id<input type="text" th:field="*{id}"/><span 
+ th:errors="*{id}"></span></p> 
+<p>age<input type="text" th:field="*{age}"/><span
+th:errors="*{age}"></span></p>
+<p>nom<input type="text" th:field="*{nom}"/><span
+th:errors="*{nom}"></span></p>
+<p><input type="submit" value="save"/></p>
+</form>
+</body>
+</html>
